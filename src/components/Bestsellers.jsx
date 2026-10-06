@@ -14,8 +14,8 @@ export default function Bestsellers({ onAdd }) {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {products.map((p) => (
-            <ProductCard key={p.id} product={p} onAdd={onAdd} />
+          {products.map((p, i) => (
+            <ProductCard key={p.id} product={p} slot={i + 2} onAdd={onAdd} />
           ))}
         </div>
       </div>

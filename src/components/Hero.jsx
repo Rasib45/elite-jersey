@@ -1,4 +1,5 @@
-import JerseyArt from './JerseyArt.jsx'
+import ImageSlot from './ImageSlot.jsx'
+import { images } from '../data/images.js'
 
 const stats = [
   { value: '4.9', unit: '/5', label: '12,000+ fan reviews' },
@@ -46,19 +47,7 @@ export default function Hero() {
         </div>
 
         <div className="hero-in-5 relative flex justify-center md:justify-end pb-6">
-          <JerseyArt
-            className="w-56 sm:w-72 md:w-96 jersey-shadow"
-            ariaLabel="Onyx premium jersey, number 10"
-            body="#171B21"
-            collar="#C9A24B"
-            collarWidth={3.5}
-            panels={{ color: '#E23B4E', opacity: 1 }}
-            trim="#C9A24B"
-            brand="FORZA"
-            number="10"
-            numSize={72}
-            numY={160}
-          />
+          <ImageSlot className="w-56 h-64 sm:w-72 sm:h-80 md:w-96 md:h-[27rem] jersey-shadow" src={images.hero} alt="Featured jersey, number 10" slot={1} label="Hero jersey" />
 
           <div className="absolute -bottom-2 left-2 sm:left-0 bg-surface/90 backdrop-blur-md border border-white/10 rounded-2xl pl-4 pr-5 py-3.5 flex items-center gap-3 shadow-xl max-w-[220px]">
             <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />

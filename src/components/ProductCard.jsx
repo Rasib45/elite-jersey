@@ -1,10 +1,10 @@
-import JerseyArt from './JerseyArt.jsx'
+import ImageSlot from './ImageSlot.jsx'
 import { formatPrice } from '../data/products.js'
 
 const badgeTone = { gold: 'bg-gold', chalk: 'bg-chalk' }
 
-export default function ProductCard({ product, onAdd }) {
-  const { name, number, type, rating, reviews, price, badge, ariaLabel, art } = product
+export default function ProductCard({ product, slot, onAdd }) {
+  const { name, number, type, rating, reviews, price, badge, image } = product
   return (
     <article className="group relative rounded-2xl bg-surface2 border border-white/5 hover:border-gold/30 transition-colors overflow-hidden">
       <div className="relative aspect-[4/5] flex items-center justify-center p-6 md:p-8">
@@ -14,19 +14,7 @@ export default function ProductCard({ product, onAdd }) {
             {badge.label}
           </span>
         )}
-        <JerseyArt
-          className="relative w-full h-full max-w-[160px]"
-          ariaLabel={ariaLabel}
-          body={art.body}
-          outline={art.outline}
-          collar={art.collar}
-          trim={art.trim}
-          panels={art.panels}
-          number={number}
-          numSize={art.numSize}
-          numFill={art.numFill}
-          numOpacity={art.numOpacity}
-        />
+        <ImageSlot className="relative w-full h-full" src={image} alt={name} slot={slot} label={name} />
       </div>
       <div className="relative p-4 md:p-5 pt-0">
         <h3 className="font-bold text-chalk text-sm md:text-base leading-snug">{name}</h3>

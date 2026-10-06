@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { JerseySprite } from './components/JerseyArt.jsx'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Bestsellers from './components/Bestsellers.jsx'
@@ -28,7 +27,6 @@ export default function App() {
 
   return (
     <>
-      <JerseySprite />
       <Header cartCount={cartCount} />
       <main>
         <Hero />

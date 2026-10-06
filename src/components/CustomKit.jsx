@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import JerseyArt from './JerseyArt.jsx'
+import ImageSlot from './ImageSlot.jsx'
+import { images } from '../data/images.js'
 
 export default function CustomKit({ onSave }) {
   const [name, setName] = useState('')
@@ -11,18 +12,12 @@ export default function CustomKit({ onSave }) {
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
         <div className="flex justify-center lg:order-2">
-          <JerseyArt
-            className="w-64 sm:w-80 jersey-shadow"
-            ariaLabel="Customizable jersey preview"
-            body="#171B21"
-            collar="#E23B4E"
-            collarWidth={3.5}
-            trim="#E23B4E"
-            name={name || 'YOUR NAME'}
-            number={number || '00'}
-            numSize={76}
-            numY={158}
-          />
+          <ImageSlot className="w-64 h-72 sm:w-80 sm:h-96 jersey-shadow" src={images.custom} alt="Customizable jersey preview" slot={8} label="Custom kit preview (back view)">
+            <div className="absolute inset-x-0 top-[22%] flex flex-col items-center pointer-events-none select-none">
+              <span className="font-body font-extrabold tracking-[0.12em] text-chalk text-sm sm:text-base drop-shadow">{name || 'YOUR NAME'}</span>
+              <span className="font-display text-chalk text-7xl sm:text-8xl leading-none drop-shadow">{number || '00'}</span>
+            </div>
+          </ImageSlot>
         </div>
 
         <div className="lg:order-1">
